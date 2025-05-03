@@ -38,6 +38,11 @@ pip3 install -r requirements.txt </code></pre>
 <br>
 
 ## 🥉 개선 사항
-- [x] websocket 제작 (라즈베리파이5 or 개인 노트북 → ros 터미널)
-- [ ] IK 퍼블리쉬 (웹소켓으로 연결) <br>
 - [x] 코드 작동(Strawberry_Vision System) <br>
+- [x] websocket 제작 (라즈베리파이5 or 개인 노트북 → ros 터미널)
+- [x] VS code에서 main.py 로 ROS2 정보 넘기기
+- [ ] IK 퍼블리쉬 (웹소켓으로 연결) <br>
+- [ ] 55cm 전방 캘리브레이션 하드코딩
+- [ ] ROS2 터미널에서 정보 받아오기 (값 변환은 vs code에서 관리)
+
+

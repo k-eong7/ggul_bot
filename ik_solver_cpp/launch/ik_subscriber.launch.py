@@ -5,13 +5,17 @@ import os
 import yaml
 
 def generate_launch_description():
-    pkg_path = get_package_share_directory('ggul_bot_v6_config')
+    pkg_path = get_package_share_directory('ggul_bot_v7_config')
 
-    urdf_path = os.path.join(pkg_path, 'config', 'ggul_bot_v6.urdf')
+    urdf_path = os.path.join(pkg_path, 'config', 'ggul_bot_v7.urdf')
+    srdf_path = os.path.join(pkg_path, 'config', 'ggul_bot_v7.srdf')  # ✅ SRDF 추가
     kin_path = os.path.join(pkg_path, 'config', 'kinematics.yaml')
 
     with open(urdf_path, 'r') as urdf_file:
         robot_description = urdf_file.read()
+
+    with open(srdf_path, 'r') as srdf_file:
+        robot_description_semantic = srdf_file.read()
 
     with open(kin_path, 'r') as kin_file:
         robot_description_kinematics = yaml.safe_load(kin_file)
@@ -24,9 +28,9 @@ def generate_launch_description():
             output='screen',
             parameters=[
                 {'robot_description': robot_description},
+                {'robot_description_semantic': robot_description_semantic},  # ✅ 반드시 필요
                 {'robot_description_kinematics': robot_description_kinematics}
             ]
         )
     ])
 
-# urdf 파일 경로 수정(하드코딩 x)
