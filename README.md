@@ -16,12 +16,14 @@ UDRF 참조 경로 수정 (상대경로에서 절대경로로)<br>
 3. websocket_pkg, Strawberry_publisher_pkg 패키지 추가
 <br><br>
 ## 🥈 websocket 제작 (라즈베리파이5 or 개인 노트북 → ros 터미널) <br>
+- 클론 하기전 꼭 ik_ws_publisher.py의 ipv4 주소를 자신의 노트북이나 라즈베리파이 ip 주소로 바꿀 것 ! (url = ip주소:포트번호) 
 - git clone 방법 동일, 이후 아래코드 실행해서 라이브러리 설치
 <pre><code>git clone <꿀봇 저장소 URL></code></pre>
 <pre><code>colcon build; source install/setup.bash</code></pre>
 <pre><code>pip install websockets</code></pre>
 - 패키지 사용
 <pre><code>ros2 run websocket_pkg ws_to_ros_publisher</code></pre>
+<pre><code>ros2 run websocket_pkg ik_ws_publisher</code></pre>
 - vs code랑 연동하는 방법<br>
 https://github.com/lko9911/RaspberryPi5-websocket<br><br>
 
@@ -41,8 +43,11 @@ pip3 install -r requirements.txt </code></pre>
 - [x] 코드 작동(Strawberry_Vision System) <br>
 - [x] websocket 제작 (라즈베리파이5 or 개인 노트북 → ros 터미널)
 - [x] VS code에서 main.py 로 ROS2 정보 넘기기
-- [ ] IK 퍼블리쉬 (웹소켓으로 연결) <br>
+- [x] IK 퍼블리쉬 (웹소켓으로 연결) <br>
+- [x] ROS2 터미널에서 정보 받아오기 (값 변환은 vs code에서 관리)
 - [ ] 55cm 전방 캘리브레이션 하드코딩
-- [ ] ROS2 터미널에서 정보 받아오기 (값 변환은 vs code에서 관리)
+- [ ] Strawberry_vision 기능 및 테스트용 메인 함수 종료
+- [ ] GUI 버전 만들기
+
 
 

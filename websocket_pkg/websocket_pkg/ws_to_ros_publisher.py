@@ -30,8 +30,14 @@ class WebSocketToROSPublisher(Node):
                 pose_msg.position.x = data['X']
                 pose_msg.position.y = data['Y']
                 pose_msg.position.z = data['Z']
+                
+                # Ensure complete orientation is set
+                pose_msg.orientation.x = 0.0
+                pose_msg.orientation.y = 0.0
+                pose_msg.orientation.z = 0.0
                 pose_msg.orientation.w = 1.0
 
+                # Publish pose
                 self.pose_publisher.publish(pose_msg)
                 self.get_logger().info(f"📤 Published Pose: {pose_msg.position}")
 

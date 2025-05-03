@@ -1,6 +1,6 @@
 import rclpy
 from rclpy.node import Node
-from std_msgs.msg import Float64MultiArray
+from sensor_msgs.msg import JointState
 import asyncio
 import websockets
 import json
@@ -9,21 +9,20 @@ class IKWebSocketPublisher(Node):
     def __init__(self):
         super().__init__('ik_ws_publisher')
         self.subscription = self.create_subscription(
-            Float64MultiArray,
-            '/ik_solution',
+            JointState,
+            '/joint_states',
             self.listener_callback,
             10)
-        self.subscription  # prevent unused variable warning
 
     def listener_callback(self, msg):
-        joint_values = msg.data
-        self.get_logger().info(f'Received IK Solution: {joint_values}')
+        joint_values = list(msg.position)  # ✅ 리스트로 변환
+        self.get_logger().info(f'Received Joint States: {joint_values}')
 
         # 웹소켓으로 전송
         asyncio.run(self.send_to_websocket(joint_values))
 
     async def send_to_websocket(self, joint_values):
-        uri = "ws://192.168.150.149:8765"  
+        uri = "ws://<IPv4>:8765"
         data = {
             "joint_values": joint_values
         }
