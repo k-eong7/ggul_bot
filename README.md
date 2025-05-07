@@ -15,6 +15,9 @@ UDRF 참조 경로 수정 (상대경로에서 절대경로로)<br>
 
 3. websocket_pkg, Strawberry_publisher_pkg 패키지 추가
 <br><br>
+
+4. robot_arm_operation_pkg 패키지 추가
+<br><br>
 ## 🥈 websocket 제작 (라즈베리파이5 or 개인 노트북 → ros 터미널) <br>
 - git clone 방법 동일, 이후 아래코드 실행해서 라이브러리 설치
 <pre><code>git clone <꿀봇 저장소 URL></code></pre>
