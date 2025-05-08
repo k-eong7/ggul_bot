@@ -20,6 +20,7 @@ setup(
     entry_points={
         'console_scripts': [
             'ws_to_ros_publisher = websocket_pkg.ws_to_ros_publisher:main',
+            'ik_ws_publisher = websocket_pkg.ik_ws_publisher:main',
         ],
     },
 )
