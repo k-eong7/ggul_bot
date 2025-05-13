@@ -78,8 +78,8 @@ def process_joint_set(joint_angles):
         print('Not enough joint angles received.')
         return
     
-    joint_angles_in_degrees = [math.degrees(angle) for angle in joint_angles]
-    print(f"Converted joint angles to degrees: {joint_angles_in_degrees}")
+    joint_angles = [math.degrees(angle) for angle in joint_angles]
+    print(f"Converted joint angles to degrees: {joint_angles}")
 
     reduction_ratios = [
         reduction_ratio_0,
@@ -134,7 +134,7 @@ def process_joint_set(joint_angles):
         time.sleep(0.001)
 
     print("Motors have reached their target positions.")
-
+    time.sleep(3)
 # ================================================
 # 메인 함수
 # ================================================
@@ -182,13 +182,13 @@ reduction_ratio_0 = 46.003
 reduction_ratio_1 = 46.003
 reduction_ratio_2 = 28.4998
 reduction_ratio_3 = 30
-reduction_ratio_4 = 20
-reduction_ratio_5 = 20
+reduction_ratio_4 = 5.5
+reduction_ratio_5 = 5
 
 # ODrive 연결
-ODRIVE1_SERIAL = "376A335A3433"
-ODRIVE0_SERIAL = "208639663631"
-ODRIVE2_SERIAL = "3079336A3436"
+ODRIVE1_SERIAL = "345135523033"
+ODRIVE0_SERIAL = "3460354E3033"
+ODRIVE2_SERIAL = "345A354E3033"
 
 print("Finding ODrive 0...")
 odrv0 = odrive.find_any(serial_number=ODRIVE0_SERIAL)
@@ -215,4 +215,3 @@ for odrv in [odrv0, odrv1, odrv2]:
 # ================================================
 if __name__ == '__main__':
     main()
-
