@@ -46,9 +46,6 @@ pip3 install -r requirements.txt </code></pre>
 <br>
 
 
-## 🥈 Start_can.sh 제작 <br>
-
-
 ## 🥉 개선 사항
 - [x] 코드 작동(Strawberry_Vision System) <br>
 - [x] websocket 제작 (라즈베리파이5 or 개인 노트북 → ros 터미널)
@@ -59,5 +56,11 @@ pip3 install -r requirements.txt </code></pre>
 - [ ] Strawberry_vision 기능 및 테스트용 메인 함수 종료
 - [ ] GUI 버전 만들기
 
-
+## Start_can.sh 제작 <br>
+- Home에 start_can.sh파일 생성 후 저장
+<pre><code>nano ~/.start_can.sh</code></pre>
+- start_can.sh 권한 부여
+<pre><code>chmod +x ~/.start_can.sh</code></pre>
+-  터미널의 위치를 Home(~/)으로 위치 시킨 후 아래 코드 실행
+<pre><code>~/.start_can.sh</code></pre>
 
