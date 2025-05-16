@@ -58,9 +58,9 @@ pip3 install -r requirements.txt </code></pre>
 
 ## Start_can.sh 제작 <br>
 - Home에 start_can.sh파일 생성 후 저장
-<pre><code>nano ~/.start_can.sh</code></pre>
+<pre><code>nano ~/start_can.sh</code></pre>
 - start_can.sh 권한 부여
-<pre><code>chmod +x ~/.start_can.sh</code></pre>
+<pre><code>chmod +x ~/start_can.sh</code></pre>
 -  터미널의 위치를 Home(~/)으로 위치 시킨 후 아래 코드 실행
-<pre><code>~/.start_can.sh</code></pre>
+<pre><code>./start_can.sh</code></pre>
 
